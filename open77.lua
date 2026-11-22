@@ -21,11 +21,13 @@ permissions {
     "database.access",   -- server: opx_example_notes (schema at start, inserts, reads, purge)
     "network.events",    -- both: requests to the server, answers and notifications to the client
     "players.life.read", -- server: Open77.players.isDead (a downed officer cannot check an id)
+    "http.request", -- server: Open77.http.get (update check, Config.versionCheck)
 }
 
 shared_script "config.lua"
 
 server_script "server/main.lua"
+server_script "server/version.lua"
 
 client_script "client/main.lua"
 
